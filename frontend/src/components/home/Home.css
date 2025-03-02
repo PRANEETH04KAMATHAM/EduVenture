@@ -1,0 +1,220 @@
+
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: #007bff;
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+.hero-section p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.primary {
+  background: #61dafb;
+  color: #333;
+}
+
+.secondary {
+  background: #ffc107;
+  color: black;
+}
+
+
+.how-it-works {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f0f4f8;
+  color: #333;
+  border-top: 2px solid #007bff;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.step {
+  text-align: center;
+  width: 250px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #007bff;
+}
+
+
+.statistics {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f4f4f4;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.stat {
+  text-align: center;
+  width: 200px;
+}
+
+.stat-icon {
+  font-size: 3rem;
+  color: #007bff;
+}
+
+
+.featured-events {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.event-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.event img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.event h3 {
+  margin: 10px 0;
+}
+
+
+.testimonials {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f4f4f4;
+}
+
+.testimonial {
+  margin: 20px auto;
+  width: 50%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.faq {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f0f4f8; /* Light background for the FAQ section */
+  color: #333; /* Dark text for readability */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.faq h2 {
+  font-size: 2rem; /* Larger font size for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.faq-item {
+  margin: 15px 0; /* Space between FAQ items */
+}
+
+.faq details {
+  background: #ffffff; /* White background for details */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px; /* Padding for details */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+.faq details:hover {
+  background: #e6f7ff; /* Light blue background on hover */
+}
+
+.faq summary {
+  font-weight: bold; /* Bold text for summary */
+  outline: none; /* Remove default outline */
+}
+
+
+
+.newsletter {
+  text-align: center;
+  padding: 50px 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  margin-bottom: 20px;
+}
+
+.newsletter-input {
+  display: flex;
+  justify-content: center;
+
+}
+
+.newsletter input {
+  padding: 10px;
+  border: none;
+  width: 250px;
+  margin-right: 20px;
+}
+
+.newsletter button {
+  padding: 10px;
+  border: none;
+  background: #010203;
+  color: #464545;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 250px;
+}
+
+.newsletter button:hover {
+  background: #01110f;
+  color: white;
+}
+
+
+
