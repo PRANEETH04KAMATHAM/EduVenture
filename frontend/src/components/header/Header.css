@@ -44,7 +44,7 @@ nav ul li a:hover {
 }
 
 
-.login-btn {
+.login-btn, .register-btn {
   background: white;
   color: #007bff;
   padding: 8px 12px;
@@ -52,7 +52,7 @@ nav ul li a:hover {
   transition: background 0.3s, color 0.3s;
 }
 
-.login-btn:hover {
+.login-btn:hover, .register-btn:hover {
   background: #0d0e02; /* Change background on hover */
   color: rgb(207, 18, 18); /* Change text color on hover */
   

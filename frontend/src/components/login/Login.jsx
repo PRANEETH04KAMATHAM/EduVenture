@@ -1,73 +1,61 @@
 import React, { useState } from "react";
-import "./Login.css"; // Import the CSS file for styling
+import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import Eye Icons
+import "./Login.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    rollNo: "",
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false); // Toggle Password
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    console.log("Form submitted:", formData);
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("student", JSON.stringify(data.user)); // ✅ Store student details
+        alert("Login Successful!");
+        navigate("/student/dashboard");
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert("Login Failed");
+    }
   };
+  
 
   return (
     <div className="login-container">
       <h2>Student Login</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+
+        {/* Password Field with Eye Icon */}
+        <div className="password-container">
+          <input 
+            type={showPassword ? "text" : "password"} 
+            name="password" 
+            placeholder="Password" 
+            onChange={handleChange} 
+            required 
           />
+          <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
         </div>
-        <div className="form-group">
-          <label htmlFor="rollNo">Roll Number:</label>
-          <input
-            type="text"
-            id="rollNo"
-            name="rollNo"
-            value={formData.rollNo}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
+
         <button type="submit">Login</button>
       </form>
     </div>

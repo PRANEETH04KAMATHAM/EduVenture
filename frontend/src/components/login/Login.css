@@ -15,6 +15,7 @@
   
   .form-group {
     margin-bottom: 15px; /* Space between form groups */
+    
   }
   
   label {
@@ -43,3 +44,87 @@
   button:hover {
     background-color: #0056b3; /* Darker shade on hover */
   }
+
+
+  /* Form Container */
+.form-container-spa {
+  max-width: 400px; /* Limit the width for better focus */
+  margin: 30px auto; /* Center the form */
+  padding: 20px;
+  border: 1px solid #d1d9e6; /* Subtle border for structure */
+  border-radius: 10px; /* Smooth rounded corners */
+  background-color: #f9fafc; /* Soft background color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Input Fields */
+.form-container-spa input {
+  width: 100%; /* Full width */
+  padding: 12px; /* Comfortable padding */
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #c4cdd5; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Readable font size */
+  box-sizing: border-box;
+}
+
+.form-container-spa input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #4a90e2; /* Blue highlight on focus */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Soft glow effect */
+}
+
+/* Submit Button */
+.form-container-spa button {
+  width: 100%; /* Full width */
+  padding: 12px; /* Comfortable padding */
+  background-color: #007bff; /* Primary blue */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Smooth edges */
+  font-size: 16px; /* Font size for readability */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth animations */
+}
+
+.form-container-spa button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.form-container-spa button:active {
+  background-color: #004494; /* Even darker blue on click */
+  transform: translateY(0); /* Reset lift effect */
+}
+
+
+/* Password Field with Eye Icon */
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px; /* Space for eye icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Eye Icon Styling */
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+  transition: color 0.3s ease-in-out;
+}
+
+.eye-icon:hover {
+  color: #007bff;
+}
