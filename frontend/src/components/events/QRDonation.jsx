@@ -47,6 +47,76 @@
 
 
 
+// import React, { useState } from "react";
+// import "./QRDonation.css";
+
+// const QRDonation = ({ eventId }) => {
+//   const [donorName, setDonorName] = useState("");
+//   const [amount, setAmount] = useState("");
+//   const [utrNumber, setUtrNumber] = useState("");
+//   const [paymentSubmitted, setPaymentSubmitted] = useState(false);
+
+//   const handleSubmitUTR = async () => {
+//     if (!donorName.trim() || !utrNumber.trim() || !amount.trim()) {
+//       alert("Please enter a valid name, amount, and UTR number.");
+//       return;
+//     }
+
+//     try {
+//       const response = await fetch(
+//         `http://localhost:5000/api/donations/verify/${eventId}`,
+//         {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify({ donorName, utrNumber, amount }),
+//         }
+//       );
+
+//       const data = await response.json();
+//       if (response.ok) {
+//         alert("Payment submitted for verification!");
+//         setPaymentSubmitted(true);
+//       } else {
+//         alert(`Error: ${data.message}`);
+//       }
+//     } catch (error) {
+//       console.error("Error submitting payment:", error);
+//       alert("Something went wrong! Try again.");
+//     }
+//   };
+
+//   return (
+//     <div className="qr-container">
+//       <h3>Enter Payment Details</h3>
+//       <input
+//         type="text"
+//         placeholder="Your Name"
+//         value={donorName}
+//         onChange={(e) => setDonorName(e.target.value)}
+//       />
+//       <input
+//         type="number"
+//         placeholder="Enter amount (₹)"
+//         value={amount}
+//         onChange={(e) => setAmount(e.target.value)}
+//       />
+//       <input
+//         type="text"
+//         placeholder="Enter UTR Number"
+//         value={utrNumber}
+//         onChange={(e) => setUtrNumber(e.target.value)}
+//       />
+//       <button onClick={handleSubmitUTR}>Submit Payment</button>
+
+//       {paymentSubmitted && <p>✅ Your payment is under verification!</p>}
+//     </div>
+//   );
+// };
+
+// export default QRDonation;
+
+
+
 import React, { useState } from "react";
 import "./QRDonation.css";
 
@@ -88,6 +158,12 @@ const QRDonation = ({ eventId }) => {
   return (
     <div className="qr-container">
       <h3>Enter Payment Details</h3>
+      {/* Display the GPay QR code */}
+      <img
+        src="\src\assets\gpay_qr.jpg" 
+        alt="GPay QR Code" 
+        className="gpay-qrcode"
+      />
       <input
         type="text"
         placeholder="Your Name"
@@ -114,5 +190,6 @@ const QRDonation = ({ eventId }) => {
 };
 
 export default QRDonation;
+
 
 
