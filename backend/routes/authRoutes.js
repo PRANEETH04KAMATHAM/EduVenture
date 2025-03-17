@@ -130,4 +130,39 @@ router.post("/admin/login", async (req, res) => {
   }
 });
 
+
+router.get("/pending-payments", async (req, res) => {
+  try {
+    const payments = await db.collection("pendingPayments").find({ verified: false }).toArray();
+    res.json(payments);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching pending payments." });
+  }
+});
+
+router.post("/verify-payment/:paymentId", async (req, res) => {
+  try {
+    const payment = await db.collection("pendingPayments").findOne({ _id: new ObjectId(req.params.paymentId) });
+
+    if (!payment) {
+      return res.status(404).json({ message: "Payment not found" });
+    }
+
+    await db.collection("events").updateOne(
+      { _id: payment.eventId },
+      { $inc: { amountReceived: payment.amount } }
+    );
+
+    await db.collection("pendingPayments").updateOne(
+      { _id: new ObjectId(req.params.paymentId) },
+      { $set: { verified: true } }
+    );
+
+    res.json({ message: "Payment verified!" });
+  } catch (error) {
+    res.status(500).json({ error: "Error verifying payment." });
+  }
+});
+
+
 export default router;

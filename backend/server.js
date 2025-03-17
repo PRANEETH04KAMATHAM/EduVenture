@@ -37,6 +37,6 @@ app.use("/api/admin", adminRoutes); // ✅ Protect Admin API
 
 app.use("/api/student", studentRoutes); // ✅ Ensure this line is present
 
-app.use("/api/donate", donationRoutes); // ✅ Register Donation API
+app.use("/api/donations", donationRoutes);  // ✅ Corrected Route
 
 app.use("/api", publicRoutes); // ✅ Ensure /api prefix is correct

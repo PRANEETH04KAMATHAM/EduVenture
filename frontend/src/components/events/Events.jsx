@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import QRDonation from "./QRDonation"; 
 import "./Events.css";
 
 const Events = () => {
@@ -21,10 +20,9 @@ const Events = () => {
         console.error("❌ Error fetching events:", error);
       }
     };
-  
+
     fetchEvents();
   }, []);
-  
 
   return (
     <div className="events-container">
@@ -40,9 +38,7 @@ const Events = () => {
             <p><strong>Venue:</strong> {event.venue}</p>
             <p><strong>Amount Raised:</strong> ₹{event.amountReceived || 0}</p>
 
-            {/* QR Code for Donations */}
-            <QRDonation eventId={event._id} />
-
+            {/* ✅ Now Navigate to Event Details Instead of Forcing Donation */}
             <button className="view-details-btn" onClick={() => navigate(`/events/${event._id}`)}>
               View Details & Donate
             </button>

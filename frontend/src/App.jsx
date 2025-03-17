@@ -14,6 +14,7 @@ import StudentHome from "./components/student/StudentHome";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import EventDetails from "./components/events/EventDetails";
 import Events from "./components/events/Events";
+import PaymentVerification from "./components/admin/PaymentVerification";
 
 import "./App.css";
 
@@ -38,7 +39,6 @@ function App() {
         </Route>
 
         {/* ✅ Redirect Donate to Events Page */}
-        <Route path="/events" element={<h2>Events Page (Fundraising Events Listed Here)</h2>} />
 
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
@@ -51,6 +51,8 @@ function App() {
         <Route path="/donate/:eventId" element={<Donate />} />
 
         <Route path="/events" element={<Events />} />
+
+        <Route path="/admin/verify-payments" element={<PaymentVerification />} />
 
       </Routes>
     </div>
